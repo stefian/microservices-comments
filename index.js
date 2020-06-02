@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 const commentsByPostId = {};
 
 app.get('/posts/:id/comments', (req, res) => {
-
+    res.send(commentsByPostId[req.params.id] || []);    // sending an array empty or with the comments
 });
 
 app.post('/posts/:id/coments', (req, res) => {
