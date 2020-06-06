@@ -20,7 +20,7 @@ app.post('/posts/:id/comments', async (req, res) => {
 
     const comments = commentsByPostId[req.params.id] || [];   // will give either an array or undefined; if undefine = []
 
-    comments.push({ id: commentId, content });
+    comments.push({ id: commentId, content, status: 'pending' });
 
     commentsByPostId[req.params.id] = comments; // saving in commentsByPostId object
 
